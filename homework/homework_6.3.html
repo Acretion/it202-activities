@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Homework 6.3</title>
+  </head>
+  
+    <body>
+        <canvas id="myCanvas" width="400" height="400"></canvas>
+      
+        <script>
+          const canvas = document.getElementById('myCanvas');
+          
+          var ctx = canvas.getContext('2d');
+          ctx.fillStyle = 'gray';
+          ctx.fillRect(0, 0, 400, 400);
+          
+          var letter = canvas.getContext('2d');
+          ctx.beginPath();
+          ctx.moveTo(80,20);
+          ctx.lineTo(20,20);
+          ctx.lineTo(20,120);
+          ctx.lineTo(80,120);
+          ctx.moveTo(20,70);
+          ctx.lineTo(60,70);
+          ctx.strokeStyle = 'red';
+          ctx.lineWidth = 8;
+          ctx.stroke();
+          
+          var shape = canvas.getContext('2d');
+          ctx.strokeStyle = 'green'
+          ctx.strokeRect(150, 100, 200, 110)
+          
+          var UIN = canvas.getContext('2d');
+          ctx.font="10px Comic Sans MS";
+          ctx.fillStyle = "white";
+          ctx.textAlign = "center";
+          ctx.fillText("UIN - 665634575", 200, 350);
+      </script>
+      
+    </body>
+</html>

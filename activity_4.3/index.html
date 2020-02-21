@@ -1,0 +1,59 @@
+<!doctype html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">  
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Activity 4.3</title>
+</head>
+
+<body>
+  
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <div class="template">
+    <h5 class="employee-name">Card title</h5>
+    <h6 class="department">Card subtitle</h6>
+    <p class="employee-salary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<!--     <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a> -->
+    </div>
+  </div>
+</div>
+  
+  <script>
+
+let apiEndpoint = "https://data.cityofchicago.org/resource/xzkq-xp2w.json?$limit=5";
+    fetch(apiEndpoint)
+    .then((response) => {return response.json();})
+    
+    .then((json) => {
+      console.log(json);
+      for (let record of json) {
+        
+        let p = document.createElement("p");
+        p.textContent = record["name"]  
+        document.body.appendChild(p);
+        
+        let department = document.createElement("department");
+        department.textContent = record["department"]
+        document.body.appendChild(department);
+        
+        let soh = document.createElement("soh");
+        soh.textContent = record["annual_salary"]
+        document.body.appendChild(soh);
+        
+        let clone = document.querySelector(".template");
+        clone.classList.remove("template");
+        clone.querySelector(".employee-name").textContent = record["name"];
+        clone.querySelector(".department").textContent = record["department"];
+        clone.querySelector(".employee-salary").textContent = record["annual_salary"];
+        document.body.appendChild(p)
+        
+        
+      }
+    })
+    
+  </script>
+</body>
