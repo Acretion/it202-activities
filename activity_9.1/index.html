@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --mdc-theme-primary: black !important;
+      }
+      
+    </style>
+    
+    <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+      <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+            <span class="mdc-top-app-bar__title">Title</span>
+          </section>
+        </div>
+      </header>
+    
+    <button class="mdc-button foo-button">
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label mdc-button--raised">Button</span>
+    </button>
+      
+      <body>
+        <script>
+          mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
+          
+          import {MDCTopAppBar} from '@material/top-app-bar';
+          // Instantiation
+          const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+          const topAppBar = new MDCTopAppBar(topAppBarElement);
+          
+        </script>
+      </body>
+  </head>
+</html>
